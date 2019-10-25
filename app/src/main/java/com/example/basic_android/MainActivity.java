@@ -11,8 +11,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        int[] arrayNumber  = {1,2,5,6,7,9,10,23,4,5};
-        findNumber(arrayNumber,50);
+        int[] arrayNumber  = {1,10,11,20,18,1,21,99};
+        findNumber(arrayNumber,1);
     }
 //   private int sumarrayNumber(int[] input)
 //   {
@@ -33,6 +33,7 @@ private void findNumber(int[] input, int Number)
         {
             Log.d("Number" + Number,"Index is "+ j);
             status=true;
+            break;
         }
         j++;
     }
