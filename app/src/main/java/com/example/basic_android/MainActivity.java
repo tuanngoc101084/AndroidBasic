@@ -11,8 +11,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
+        int[] arrayNumber  = {1,2,5,6,7,9,10,23,4,5};
+        Log.d("BBB","Sum is "+ sumarrayNumber(arrayNumber));
     }
-
+   private int sumarrayNumber(int[] input)
+   {
+       int Sum=0;
+       for(int i: input)
+       {
+           Sum+=i;
+       }
+       return Sum;
+   }
 }
