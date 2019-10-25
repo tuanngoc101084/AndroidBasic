@@ -11,8 +11,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        int[] arrayNumber  = {1,10,11,20,18,1,21,99};
-        findNumber(arrayNumber,1);
+        int[] arrayNumber  = {1,2,3,3,3,4,5};
+        int [] result=returnArray(arrayNumber);
+        for(int i: result)
+        {
+            Log.d("Result", "Value: "+ i);
+        }
+
     }
 //   private int sumarrayNumber(int[] input)
 //   {
@@ -23,24 +28,37 @@ public class MainActivity extends AppCompatActivity {
 //       }
 //       return Sum;
 //   }
-private void findNumber(int[] input, int Number)
+private boolean checkExistNumber(int[] input, int Number)
 {
-    int j=0;
     Boolean status=false;
     for(int i: input)
     {
         if (Number==i)
         {
-            Log.d("Number" + Number,"Index is "+ j);
             status=true;
             break;
         }
-        j++;
     }
-    if (!status)
-    {
-        Log.d("Number" + Number,"Index is "+ "-1");
-    }
-
+    return status;
 }
+    private int[] returnArray(int [] input)
+    {
+        int k=0;
+        int[] Temp= new int[input.length] ;
+        for(int i: input)
+        {
+          if (!checkExistNumber(Temp,i))
+          {
+              Temp[k]=i;
+              k++;
+          }
+        }
+        int m=0;
+        int[] arrayFinal= new int [k];
+        for (;m<k;m++)
+        {
+            arrayFinal[m]=Temp[m];
+        }
+        return arrayFinal;
+    }
 }
